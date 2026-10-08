@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><title>Apply - Globex</title>
+<style>.opts{border:1px solid #ccc} .opts[hidden]{display:none}</style></head>
+<body>
+<!-- Mock of the newer Greenhouse job-boards form: ids, labels, searchable comboboxes -->
+<form id="application-form" onsubmit="window.__submitted = true; return false;">
+  <div><label for="first_name">First Name*</label><input id="first_name" aria-required="true"></div>
+  <div><label for="last_name">Last Name*</label><input id="last_name" aria-required="true"></div>
+  <div><label for="preferred_name">Preferred First Name</label><input id="preferred_name"></div>
+  <div><label for="email">Email*</label><input id="email" type="email" aria-required="true"></div>
+  <div><label for="phone">Phone</label><input id="phone" type="tel" value="555-already-there"></div>
+  <div><label for="resume">Resume/CV*</label><input id="resume" type="file" style="display:none" accept=".pdf,.doc,.docx"><button type="button">Attach</button></div>
+  <div><label for="cover_letter">Cover Letter</label><input id="cover_letter" type="file" style="display:none"><button type="button">Attach</button></div>
+  <div><label for="school--0">School*</label>
+    <input id="school--0" role="combobox" aria-autocomplete="list" aria-required="true" autocomplete="off">
+    <div class="opts" id="school-list" role="listbox" hidden></div></div>
+  <div><label for="degree--0">Degree</label>
+    <select id="degree--0"><option value="">Select...</option><option>High School</option><option>Associate's Degree</option>
+      <option>Bachelor's Degree</option><option>Master's Degree</option><option>Doctor of Philosophy (Ph.D.)</option></select></div>
+  <div><label for="discipline--0">Discipline</label>
+    <select id="discipline--0"><option value="">Select...</option><option>Computer Engineering</option>
+      <option>Computer Science</option><option>Information Systems</option></select></div>
+  <div><label for="q_linkedin">LinkedIn Profile</label><input id="q_linkedin"></div>
+  <div><label for="q_site">Website</label><input id="q_site"></div>
+  <div><label for="q_grad">Expected graduation year*</label>
+    <select id="q_grad" aria-required="true"><option value="">Select...</option><option>2026</option><option>2027</option><option>2028</option></select></div>
+  <div><label for="q_years">How many years of professional experience do you have?*</label><input id="q_years" aria-required="true"></div>
+  <h3>Voluntary Self-Identification</h3>
+  <div><label for="hispanic_ethnicity">Are you Hispanic/Latino?</label>
+    <select id="hispanic_ethnicity"><option value="">Please select</option><option>Yes</option><option>No</option><option>Decline To Self Identify</option></select></div>
+  <div><label for="race">Please identify your race</label>
+    <select id="race"><option value="">Please select</option><option>American Indian or Alaska Native</option><option>Asian</option>
+      <option>Black or African American</option><option>Two or More Races</option><option>Decline To Self Identify</option></select></div>
+  <fieldset><legend>Veteran Status</legend>
+    <label><input type="radio" name="veteran_status" value="1"> I identify as one or more of the classifications of protected veteran</label>
+    <label><input type="radio" name="veteran_status" value="2"> I am not a protected veteran</label>
+    <label><input type="radio" name="veteran_status" value="3"> I don't wish to answer</label></fieldset>
+  <div><label for="disability_status">Disability Status</label>
+    <select id="disability_status"><option value="">Please select</option>
+      <option>Yes, I have a disability (or previously had a disability)</option>
+      <option>No, I do not have a disability</option><option>I do not want to answer</option></select></div>
+  <button type="submit">Submit application</button>
+</form>
+<script>
+  const schools = ["University of Louisiana at Lafayette", "University of Louisiana at Monroe",
+                   "Louisiana State University", "Louisiana Tech University", "Other"];
+  const box = document.getElementById('school--0'), list = document.getElementById('school-list');
+  function render() {
+    const q = box.value.toLowerCase();
+    list.innerHTML = '';
+    schools.filter(s => !q || s.toLowerCase().includes(q)).forEach(s => {
+      const d = document.createElement('div'); d.setAttribute('role', 'option'); d.textContent = s;
+      d.onclick = () => { box.value = s; list.hidden = true; }; list.appendChild(d);
+    });
+    list.hidden = false;
+  }
+  box.addEventListener('focus', render); box.addEventListener('input', render);
+  box.addEventListener('keydown', e => { if (e.key === 'Escape') list.hidden = true; });
+</script>
+</body></html>

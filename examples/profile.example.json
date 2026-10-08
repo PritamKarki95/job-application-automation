@@ -1,0 +1,41 @@
+{
+  "first_name": "Alex",
+  "last_name": "Example",
+  "email": "alex@example.com",
+  "phone": "202-555-0100",
+  "university": "Example University",
+  "degree": "Bachelor of Science",
+  "major": "Computer Science",
+  "graduation": "May 2028",
+  "graduation_month": "05",
+  "graduation_year": "2028",
+  "github": "",
+  "linkedin": "",
+  "portfolio": "",
+  "extra_links": [],
+  "projects": [],
+  "experience": [
+    {
+      "employer": "Example Lab",
+      "title": "Student Developer",
+      "location": "Example City",
+      "start_date": "2025-01",
+      "end_date": "2025-05",
+      "current": false,
+      "description": "Built and tested a classroom Python application."
+    }
+  ],
+  "work_authorization": {
+    "status_note": "",
+    "current_authorization_preference": "",
+    "future_sponsorship_preference": "",
+    "sponsorship_confirmed": false
+  },
+  "demographics": {
+    "race": "",
+    "hispanic_latino": "",
+    "veteran": "",
+    "disability": "",
+    "gender": ""
+  }
+}

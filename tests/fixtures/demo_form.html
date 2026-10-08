@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Mock Application — Educational Demo</title>
+<style>body{font:16px system-ui;max-width:720px;margin:40px auto;padding:20px;background:#f5f7fa}label{display:block;margin:14px 0}input,textarea{display:block;padding:8px;width:95%;margin-top:5px}fieldset{margin:20px 0}button{padding:12px}</style></head>
+<body><h1>Mock Application</h1><p>Fictional applicant and employer. This page has no backend and sends no applications.</p>
+<form onsubmit="event.preventDefault(); window.__submitted=true;">
+<label>Full name<input name="name"></label><label>Email<input name="email"></label><label>Phone<input name="phone"></label>
+<label>Resume<input type="file" name="resume"></label>
+<fieldset><legend>Work Experience</legend><label>Employer<input name="employer"></label><label>Job title<input name="job_title"></label>
+<label>Start date<input name="start_date" type="month"></label><label>End date<input name="end_date" type="month"></label>
+<label>Responsibilities<textarea name="duties"></textarea></label></fieldset>
+<button type="submit" disabled>Submission disabled in this demonstration</button></form></body></html>
