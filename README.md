@@ -145,7 +145,3 @@ All demonstrations and testing should be performed using mock data or explicitly
 
 The code is provided as-is, without guarantees of functionality, reliability, security, or suitability for real-world use.
 
-## License
-
-The repository is unlicensed for now, as selected by its owner. See
-[release guidance](docs/RELEASE.md) for the implications and alternatives.
